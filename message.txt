@@ -1,0 +1,1 @@
+This is a test file for night_writer implementation. This file contains 86 characters.
