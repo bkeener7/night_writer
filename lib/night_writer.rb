@@ -1,9 +1,6 @@
 #ruby ./lib/night_writer.rb message.txt braille.txt
 class NightWriter
-    attr_reader :existing_file,
-                :created_file,
-                :character_length,
-                :create_file
+    attr_reader :existing_file
 
     def initialize 
         @existing_file = ARGV[0]
@@ -18,12 +15,13 @@ class NightWriter
         "Created '#{created_file}' containing #{character_length} characters"
     end
 
-    def create_file
-        File.open("#{created_file}", 'w+')
+    def read_file(input_file)
+        File.read(input_file)
     end
 
-    def read_file
-        File.open("#{existing_file}", 'r').read
+    def write_file(writing_file, reading_file)
+        output_file = File.open(writing_file, 'w+')
+        output_file.write(read_file(reading_file))
+        output_file.close
     end
-
 end
