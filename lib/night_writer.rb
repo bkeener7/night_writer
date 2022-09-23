@@ -1,3 +1,4 @@
+#ruby ./lib/night_writer.rb message.txt braille.txt
 class NightWriter
     attr_reader :existing_file,
                 :created_file,
@@ -7,16 +8,22 @@ class NightWriter
     def initialize 
         @existing_file = ARGV[0]
         @created_file = ARGV[1]
-        @character_length = File.read('./message.txt').length
+    end
+
+    def character_length
+        File.read("#{created_file}").length
     end
 
     def startup_message
         "Created '#{created_file}' containing #{character_length} characters"
     end
 
-    #should this be new or open?
     def create_file
-        File.open("#{created_file}", "w+")
+        File.open("#{created_file}", 'w+')
+    end
+
+    def read_file
+        File.open("#{existing_file}", 'r').read
     end
 
 end

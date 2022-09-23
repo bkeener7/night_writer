@@ -2,6 +2,7 @@ require 'simplecov'
 require 'rspec'
 require 'stringio'
 require './lib/night_writer'
+require './lib/braille'
 # SimpleCov.start
 
 # #all require_relatives here
