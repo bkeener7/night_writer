@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-24T12:05:53-06:00">2022-09-24T12:05:53-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-24T12:48:08-06:00">2022-09-24T12:48:08-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.29
+         1.25
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>45</b> relevant lines,
-    <span class="green"><b>45</b> lines covered</span> and
+    <b>57</b> relevant lines,
+    <span class="green"><b>57</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1addb5db6a7065a086f3a527a5d23368ea1be761" class="src_link" title="spec/braille_spec.rb">spec/braille_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">64</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">11</td>
+            <td class="cell--number">78</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.27</td>
+            <td class="cell--number">1.17</td>
             
           </tr>
         
@@ -134,8 +134,8 @@
     
 
     <div class="t-line-summary">
-      <b>11</b> relevant lines.
-      <span class="green"><b>11</b> lines covered</span> and
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -180,8 +180,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="4">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="5" data-linenumber="4">
+            <span class="hits">5</span>
             
 
             
@@ -840,7 +840,161 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;5. can print braille characters in correct vertical and horizontal order&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        allow(braille).to receive(:print).and_return(double().as_null_object)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expected = [[[&quot;0.&quot;], [&quot;00&quot;], [&quot;..&quot;]], [[&quot;0.&quot;], [&quot;.0&quot;], [&quot;..&quot;]], [[&quot;0.&quot;], [&quot;0.&quot;], [&quot;0.&quot;]], [[&quot;0.&quot;], [&quot;0.&quot;], [&quot;0.&quot;]], [[&quot;0.&quot;], [&quot;.0&quot;], [&quot;0.&quot;]]]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expected_print = [[&quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;], [&quot;00&quot;, &quot;.0&quot;, &quot;0.&quot;, &quot;0.&quot;, &quot;.0&quot;], [&quot;..&quot;, &quot;..&quot;, &quot;0.&quot;, &quot;0.&quot;, &quot;0.&quot;]]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="68">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:h)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="69">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:e)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:l)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="71">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:l)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="72">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:o)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(braille.grid.length).to eq 5</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="74">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(braille.grid).to eq(expected)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="75">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(braille.print_grid).to eq(expected_print)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 

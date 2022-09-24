@@ -11,11 +11,23 @@ class Braille < Dictionary
         super
     end
 
+    def print_grid
+        vertical_alignment = grid.flatten.each_slice(3).to_a.transpose
+        vertical_alignment.each do |lines|
+            lines.each { |line| print line }
+            print "\n"
+        end
+    end
+
     def print_character(character)
         character_array(character).each { |char_line| puts char_line }
     end
 
     def add_character(character)
-        grid.push(character_array(character)) if grid.length < 40     
+        if grid.length < 40
+            grid.push(character_array(character))
+        else 
+            :error
+        end
     end
 end
