@@ -40,20 +40,73 @@
           null
         ]
       },
-      "/Users/sage/Turing/1_mod/projects/night_writer/spec/spec_helper.rb": {
+      "/Users/sage/Turing/1_mod/projects/night_writer/spec/braille_spec.rb": {
         "lines": [
           1,
+          null,
           1,
+          null,
           1,
           1,
           1,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/sage/Turing/1_mod/projects/night_writer/spec/dictionary_spec.rb": {
+        "lines": [
           1,
+          null,
+          1,
+          5,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1663958529
+    "timestamp": 1664035712
   }
 }

@@ -1,8 +1,9 @@
 class Dictionary
-    attr_reader :to_braille
+    attr_reader :translate,
+                :translate_multiple
 
     def initialize
-        @to_braille = {
+        @translate = {
             a: "0.\n..\n..",
             b: "0.\n0.\n..",
             c: "00\n..\n..",
@@ -30,8 +31,15 @@ class Dictionary
             y: "00\n.0\n00",
             z: "0.\n.0\n00"
         }
-    end 
+    end
+
+    def character_array(character)
+        arr = translate[character].split "\n"
+        arr.each_slice(1).to_a
+    end
+
+    def translate_multiple(characters)
+        characters.map { |character| translate[character] }
+    end
 
 end
-
-require 'pry'; binding.pry
