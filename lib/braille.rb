@@ -1,12 +1,12 @@
 require_relative 'dictionary'
 
 class Braille < Dictionary
-    attr_reader :grid
+    attr_reader :grid,
+                :word_wrap
 
     #full grid is 40 braille characters. 80 wide, and 3 tall
     #one braille character is 2 wide and 3 tall
     def initialize
-        # @grid = Array.new(40) { Array.new(3) { Array.new(1) { nil } } }
         @grid = Array.new
         super
     end
@@ -25,6 +25,11 @@ class Braille < Dictionary
 
     def add_character(character)
         if grid.length < 40
+            grid.push(character_array(character))
+        elsif grid.length % 40 == 0
+            print_grid
+            print "\n"
+            @grid = Array.new
             grid.push(character_array(character))
         else 
             :error
