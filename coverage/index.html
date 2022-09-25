@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-24T15:04:56-06:00">2022-09-24T15:04:56-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-25T13:31:33-06:00">2022-09-25T13:31:33-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.8
+         1.64
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>70</b> relevant lines,
-    <span class="green"><b>70</b> lines covered</span> and
+    <b>91</b> relevant lines,
+    <span class="green"><b>91</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -73,11 +73,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1addb5db6a7065a086f3a527a5d23368ea1be761" class="src_link" title="spec/braille_spec.rb">spec/braille_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">56</td>
             <td class="cell--number">39</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">27</td>
+            <td class="cell--number">39</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.70</td>
+            <td class="cell--number">2.21</td>
             
           </tr>
         
@@ -95,11 +95,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2ce4b6dce6985f70ca3f3da60743a8489e1fd130" class="src_link" title="spec/night_writer_spec.rb">spec/night_writer_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">21</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">30</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.24</td>
+            <td class="cell--number">1.20</td>
             
           </tr>
         
@@ -145,8 +145,8 @@
     
 
     <div class="t-line-summary">
-      <b>27</b> relevant lines.
-      <span class="green"><b>27</b> lines covered</span> and
+      <b>39</b> relevant lines.
+      <span class="green"><b>39</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -191,8 +191,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="4">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="7" data-linenumber="4">
+            <span class="hits">7</span>
             
 
             
@@ -329,7 +329,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:h)</code>
+            <code class="ruby">        braille.add_character(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -417,7 +417,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:h)</code>
+            <code class="ruby">        braille.add_character(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -428,7 +428,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:e)</code>
+            <code class="ruby">        braille.add_character(:e, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -439,7 +439,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:l)</code>
+            <code class="ruby">        braille.add_character(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -450,7 +450,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:l)</code>
+            <code class="ruby">        braille.add_character(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -461,7 +461,7 @@
 
             
 
-            <code class="ruby">        braille.add_character(:o)</code>
+            <code class="ruby">        braille.add_character(:o, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -494,7 +494,7 @@
 
             
 
-            <code class="ruby">        expect(braille.print_grid).to eq(expected_print)</code>
+            <code class="ruby">        expect(braille.print_grid(&#39;./dummy_files/dummy_write.txt&#39;)).to eq(expected_print)</code>
           </li>
         </div>
       
@@ -549,7 +549,7 @@
 
             
 
-            <code class="ruby">        41.times { braille.add_character(:a) }</code>
+            <code class="ruby">        41.times { braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;) }</code>
           </li>
         </div>
       
@@ -571,12 +571,199 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        File.open(&#39;./dummy_files/dummy_write.txt&#39;, &#39;w+&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq &quot;&quot; </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="43">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;6. can write to file&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="47">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="48">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.add_character(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        braille.print_grid(&#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq &quot;0.0.0.0.0.\n..........\n..........\n&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        File.open(&#39;./dummy_files/dummy_write.txt&#39;, &#39;w+&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq &quot;&quot;     </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -1208,8 +1395,8 @@
     
 
     <div class="t-line-summary">
-      <b>21</b> relevant lines.
-      <span class="green"><b>21</b> lines covered</span> and
+      <b>30</b> relevant lines.
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1254,8 +1441,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="4">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="7" data-linenumber="4">
+            <span class="hits">7</span>
             
 
             
@@ -1596,6 +1783,149 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;6. can translate files to braille&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        allow(nightwriter).to receive(:existing_filepath).and_return(&#39;./dummy_files/dummy_translate.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        allow(nightwriter).to receive(:created_filepath).and_return(&#39;./dummy_files/dummy_write.txt&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expected = &quot;0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n\n0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n........................................\n........................................\n&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">        </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq &quot;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="42">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        nightwriter.translate_file</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq expected</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        File.open(&#39;./dummy_files/dummy_write.txt&#39;, &#39;w+&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(File.read(&#39;./dummy_files/dummy_write.txt&#39;)).to eq &quot;&quot;   </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 

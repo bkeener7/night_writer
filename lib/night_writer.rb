@@ -6,19 +6,16 @@ class NightWriter
                 :created_filepath,
                 :braille
 
-    def initialize 
-        @existing_filepath = ARGV[0]
-        @created_filepath = ARGV[1]
+    def initialize(existing_filepath, created_filepath)
+        @existing_filepath = existing_filepath
+        @created_filepath = created_filepath
         @braille = Braille.new
     end
 
-    # def self.run_translation
-    #     print startup_message
-    #     write_file(created_filepath, existing_filepath)
-        
-
-
-    # end
+    def start
+        translate_file
+        puts startup_message
+    end
     
     def character_length
         File.read("#{created_filepath}").length
