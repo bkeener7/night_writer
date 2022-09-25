@@ -35,8 +35,7 @@ class Dictionary
     end
 
     def character_array(character)
-        arr = translate[character].split "\n"
-        arr.each_slice(1).to_a
+        arr = translate[character].split
     end
 
     def translate_braille(braille_character)

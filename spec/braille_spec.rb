@@ -9,12 +9,12 @@ RSpec.describe Braille do
 
     it '2. can add a braille character to the grid' do
         braille.add_character(:h, './dummy_files/dummy_write.txt')
-        expect(braille.grid).to eq([[["0."], ["00"], [".."]]])
+        expect(braille.grid).to eq([["0.", "00", ".."]])
     end
 
    it '3. can print braille characters in correct vertical and horizontal order' do
         allow(braille).to receive(:print).and_return(double().as_null_object)
-        expected = [[["0."], ["00"], [".."]], [["0."], [".0"], [".."]], [["0."], ["0."], ["0."]], [["0."], ["0."], ["0."]], [["0."], [".0"], ["0."]]]
+        expected = [["0.", "00", ".."], ["0.", ".0", ".."], ["0.", "0.", "0."], ["0.", "0.", "0."], ["0.", ".0", "0."]]
         expected_print = [["0.", "0.", "0.", "0.", "0."], ["00", ".0", "0.", "0.", ".0"], ["..", "..", "0.", "0.", "0."]]
         braille.add_character(:h, './dummy_files/dummy_write.txt')
         braille.add_character(:e, './dummy_files/dummy_write.txt')
@@ -29,7 +29,7 @@ RSpec.describe Braille do
     it '4. will only allow 40 braille characters in a grid' do
         allow(braille).to receive(:print).and_return(double().as_null_object)
         41.times { braille.add_character(:a, './dummy_files/dummy_write.txt') }
-        expect(braille.grid).to eq([[["0."], [".."], [".."]]])
+        expect(braille.grid).to eq([["0.", "..", ".."]])
 
         File.open('./dummy_files/dummy_write.txt', 'w+')
         expect(File.read('./dummy_files/dummy_write.txt')).to eq "" 
@@ -47,5 +47,9 @@ RSpec.describe Braille do
 
         File.open('./dummy_files/dummy_write.txt', 'w+')
         expect(File.read('./dummy_files/dummy_write.txt')).to eq ""     
+    end
+
+    it '6. can translate back to english' do
+
     end
 end

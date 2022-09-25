@@ -44,7 +44,7 @@ RSpec.describe Dictionary do
     end
 
     it '4. can convert letters to braille array' do
-        expect(dictionary.character_array(:k)).to eq [["0."], [".."], ["0."]]
+        expect(dictionary.character_array(:k)).to eq ["0.", "..", "0."]
     end
 
     it '5. can convert letters back to english' do

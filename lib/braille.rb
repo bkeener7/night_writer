@@ -30,4 +30,17 @@ class Braille < Dictionary
             :error
         end
     end
+
+    def to_english(character, file_path)
+        if grid.length < 40
+            grid.push(character_array(character))
+        elsif grid.length % 40 == 0
+            print_grid(file_path)
+            File.write(file_path, "\n", mode: 'a') 
+            @grid = Array.new
+            grid.push(character_array(character))
+        else 
+            :error
+        end
+    end
 end
