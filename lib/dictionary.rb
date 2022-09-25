@@ -31,7 +31,6 @@ class Dictionary
             y: "00\n.0\n00",
             z: "0.\n.0\n00",
             " ": "..\n..\n.."
-
         }
     end
 
@@ -40,8 +39,7 @@ class Dictionary
         arr.each_slice(1).to_a
     end
 
-    def translate_multiple(characters)
-        characters.map { |character| translate[character] }
+    def translate_braille(braille_character)
+        translate.invert[braille_character].to_s
     end
-
 end

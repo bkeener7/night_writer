@@ -24,16 +24,6 @@ class NightWriter
     def startup_message
         "Created '#{created_filepath}' containing #{character_length} characters"
     end
-
-    def read_file(file_path)
-        File.read(file_path)
-    end
-
-    def write_file(writing_filepath, reading_filepath)
-        output_file = File.open(writing_filepath, 'w+')
-        output_file.write(read_file(reading_filepath))
-        output_file.close
-    end
     
     def translate_file
         input_text = File.read(existing_filepath).chars

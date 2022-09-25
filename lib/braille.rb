@@ -18,10 +18,6 @@ class Braille < Dictionary
         end
     end
 
-    def print_character(character)
-        character_array(character).each { |char_line| puts char_line }
-    end
-
     def add_character(character, file_path)
         if grid.length < 40
             grid.push(character_array(character))
