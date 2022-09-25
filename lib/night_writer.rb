@@ -6,19 +6,21 @@ class NightWriter
                 :created_filepath,
                 :braille
 
-    def initialize 
-        @existing_filepath = ARGV[0]
-        @created_filepath = ARGV[1]
+    def initialize(existing_filepath, created_filepath)
+        @existing_filepath = existing_filepath
+        @created_filepath = created_filepath
         @braille = Braille.new
     end
 
-    # def self.run_translation
-    #     print startup_message
-    #     write_file(created_filepath, existing_filepath)
-        
+    def start_nightwriter
+        translate_to_braille
+        puts startup_message
+    end
 
-
-    # end
+    def start_nightreader
+        translate_to_english
+        puts startup_message
+    end
     
     def character_length
         File.read("#{created_filepath}").length
@@ -27,22 +29,18 @@ class NightWriter
     def startup_message
         "Created '#{created_filepath}' containing #{character_length} characters"
     end
-
-    def read_file(file_path)
-        File.read(file_path)
-    end
-
-    def write_file(writing_filepath, reading_filepath)
-        output_file = File.open(writing_filepath, 'w+')
-        output_file.write(read_file(reading_filepath))
-        output_file.close
-    end
     
-    def translate_file
+    def translate_to_braille
         input_text = File.read(existing_filepath).chars
         input_text.map do |char|
-            braille.add_character(char.to_sym, created_filepath)
+            braille.add_english(char.to_sym, created_filepath)
         end
-        braille.print_grid(created_filepath)        
+        braille.print_braille(created_filepath)
+        File.truncate(created_filepath, File.size(created_filepath) - 1)
+    end
+
+    def translate_to_english
+        File.open(created_filepath, 'w+')
+        braille.print_english(existing_filepath, created_filepath)
     end
 end

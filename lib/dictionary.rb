@@ -1,6 +1,5 @@
 class Dictionary
-    attr_reader :translate,
-                :translate_multiple
+    attr_reader :translate
 
     def initialize
         @translate = {
@@ -29,17 +28,16 @@ class Dictionary
             w: ".0\n00\n.0",
             x: "00\n..\n00",
             y: "00\n.0\n00",
-            z: "0.\n.0\n00"
+            z: "0.\n.0\n00",
+            " ": "..\n..\n.."
         }
     end
 
     def character_array(character)
-        arr = translate[character].split "\n"
-        arr.each_slice(1).to_a
+        translate[character].split
     end
 
-    def translate_multiple(characters)
-        characters.map { |character| translate[character] }
+    def translate_braille(braille_character)
+        translate.invert[braille_character].to_s
     end
-
 end
