@@ -12,8 +12,13 @@ class NightWriter
         @braille = Braille.new
     end
 
-    def start
-        translate_file
+    def start_nightwriter
+        translate_to_braille
+        puts startup_message
+    end
+
+    def start_nightreader
+        translate_to_english
         puts startup_message
     end
     
@@ -25,12 +30,17 @@ class NightWriter
         "Created '#{created_filepath}' containing #{character_length} characters"
     end
     
-    def translate_file
+    def translate_to_braille
         input_text = File.read(existing_filepath).chars
         input_text.map do |char|
             braille.add_english(char.to_sym, created_filepath)
         end
         braille.print_braille(created_filepath)
         File.truncate(created_filepath, File.size(created_filepath) - 1)
+    end
+
+    def translate_to_english
+        File.open(created_filepath, 'w+')
+        braille.print_english(existing_filepath, created_filepath)
     end
 end
