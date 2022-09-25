@@ -1,13 +1,23 @@
 #ruby ./lib/night_writer.rb message.txt braille.txt
+require_relative 'braille'
+
 class NightWriter
+    attr_reader :existing_filepath,
+                :created_filepath,
+                :braille
 
     def initialize 
         @existing_filepath = ARGV[0]
         @created_filepath = ARGV[1]
+        @braille = Braille.new
     end
 
-    # def self.terminal_welcome
-    #     merge with startup message?
+    # def self.run_translation
+    #     print startup_message
+    #     write_file(created_filepath, existing_filepath)
+        
+
+
     # end
     
     def character_length
@@ -26,5 +36,13 @@ class NightWriter
         output_file = File.open(writing_filepath, 'w+')
         output_file.write(read_file(reading_filepath))
         output_file.close
+    end
+    
+    def translate_file
+        input_text = File.read(existing_filepath).chars
+        input_text.map do |char|
+            braille.add_character(char.to_sym, created_filepath)
+        end
+        braille.print_grid(created_filepath)        
     end
 end
