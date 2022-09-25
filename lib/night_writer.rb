@@ -30,6 +30,7 @@ class NightWriter
         input_text.map do |char|
             braille.add_character(char.to_sym, created_filepath)
         end
-        braille.print_grid(created_filepath)        
+        braille.print_grid(created_filepath)
+        File.truncate(created_filepath, File.size(created_filepath) - 1)
     end
 end
