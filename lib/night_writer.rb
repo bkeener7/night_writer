@@ -1,12 +1,15 @@
 #ruby ./lib/night_writer.rb message.txt braille.txt
 require_relative 'braille'
 
-class NightWriter < Braille
+class NightWriter
+    attr_reader :existing_filepath,
+                :created_filepath,
+                :braille
 
     def initialize 
         @existing_filepath = ARGV[0]
         @created_filepath = ARGV[1]
-        # @braille = Braille.new
+        @braille = Braille.new
     end
 
     # def self.run_translation
@@ -33,5 +36,13 @@ class NightWriter < Braille
         output_file = File.open(writing_filepath, 'w+')
         output_file.write(read_file(reading_filepath))
         output_file.close
-    end    
+    end
+    
+    def translate_file
+        input_text = File.read(existing_filepath).chars
+        input_text.map do |char|
+            braille.add_character(char.to_sym, created_filepath)
+        end
+        braille.print_grid(created_filepath)        
+    end
 end

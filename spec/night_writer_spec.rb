@@ -32,4 +32,17 @@ RSpec.describe NightWriter do
         File.delete('./dummy_files/dummy_braille.txt')
         expect(File.exists?('./dummy_files/dummy_braille.txt')).to be false
     end
+
+    it '6. can translate files to braille' do
+        allow(nightwriter).to receive(:existing_filepath).and_return('./dummy_files/dummy_translate.txt')
+        allow(nightwriter).to receive(:created_filepath).and_return('./dummy_files/dummy_write.txt')
+        expected = "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n\n0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n........................................\n........................................\n"
+        
+        expect(File.read('./dummy_files/dummy_write.txt')).to eq ""
+        nightwriter.translate_file
+
+        expect(File.read('./dummy_files/dummy_write.txt')).to eq expected
+        File.open('./dummy_files/dummy_write.txt', 'w+')
+        expect(File.read('./dummy_files/dummy_write.txt')).to eq ""   
+    end
 end
