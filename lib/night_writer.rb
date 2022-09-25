@@ -28,9 +28,9 @@ class NightWriter
     def translate_file
         input_text = File.read(existing_filepath).chars
         input_text.map do |char|
-            braille.add_character(char.to_sym, created_filepath)
+            braille.add_english(char.to_sym, created_filepath)
         end
-        braille.print_grid(created_filepath)
+        braille.print_braille(created_filepath)
         File.truncate(created_filepath, File.size(created_filepath) - 1)
     end
 end

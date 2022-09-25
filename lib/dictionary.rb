@@ -1,6 +1,5 @@
 class Dictionary
-    attr_reader :translate,
-                :translate_multiple
+    attr_reader :translate
 
     def initialize
         @translate = {
@@ -35,7 +34,7 @@ class Dictionary
     end
 
     def character_array(character)
-        arr = translate[character].split
+        translate[character].split
     end
 
     def translate_braille(braille_character)
