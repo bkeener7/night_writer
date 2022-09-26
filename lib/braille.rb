@@ -12,12 +12,12 @@ class Braille < Dictionary
         line_count = 0
         File.readlines(incoming_file_path).each do |line|
             if line_count == 2
-                @grid.push(line.strip.chars.each_slice(2).to_a)
+                grid.push(line.strip.chars.each_slice(2).to_a)
                 print_english_translation(outgoing_file_path)
                 @grid = Array.new                
                 line_count = 0
             else 
-                @grid.push(line.strip.chars.each_slice(2).to_a)
+                grid.push(line.strip.chars.each_slice(2).to_a)
                 line_count += 1
             end            
         end
