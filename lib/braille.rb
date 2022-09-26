@@ -6,17 +6,7 @@ class Braille < Dictionary
     def initialize
         @grid = Array.new
         super
-    end
-
-    def print_braille(file_path)
-        vertical_alignment = grid.flatten.each_slice(3).to_a.transpose
-        vertical_alignment.each do |lines|
-            lines.each do|line|
-                File.write(file_path, "#{line}", mode: 'a')
-            end
-            File.write(file_path, "\n", mode: 'a') 
-        end
-    end
+    end    
 
     def print_english(incoming_file_path, outgoing_file_path)
         add_braille(incoming_file_path)
@@ -36,6 +26,15 @@ class Braille < Dictionary
             grid.push(character_array(character))
         else 
             :error
+        end
+    end
+
+    def print_braille(file_path)
+        grid.transpose.each do |lines|
+            lines.each do|line|
+                File.write(file_path, "#{line}", mode: 'a')
+            end
+            File.write(file_path, "\n", mode: 'a') 
         end
     end
 

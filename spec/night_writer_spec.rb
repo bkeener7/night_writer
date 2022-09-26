@@ -24,7 +24,7 @@ RSpec.describe NightWriter do
         expected = "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n\n0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n........................................\n........................................"
         expect(File.read('./dummy_files/dummy_write.txt')).to eq ""
 
-        nightwriter.translate_file
+        nightwriter.translate_to_braille
         expect(File.read('./dummy_files/dummy_write.txt')).to eq expected
         
         File.open('./dummy_files/dummy_write.txt', 'w+')
