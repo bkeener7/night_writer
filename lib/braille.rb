@@ -9,7 +9,22 @@ class Braille < Dictionary
     end    
 
     def print_english(incoming_file_path, outgoing_file_path)
-        add_braille_character(incoming_file_path)
+        line_count = 0
+        File.readlines(incoming_file_path).each do |line|
+            if line_count != 0 && line_count % 3 == 0                
+                grid.transpose.each do |character|
+                    english_char = translate_braille(character.join.scan(/.{1,2}/).join("\n"))
+                    File.write(outgoing_file_path, english_char, mode: 'a')
+                end
+                @grid = Array.new
+                @grid.push(line.strip.chars.each_slice(2).to_a)
+                line_count = 1
+            else 
+                # require 'pry'; binding.pry
+                line_count += 1
+                @grid.push(line.strip.chars.each_slice(2).to_a)
+            end            
+        end
         grid.transpose.each do |character|
             english_char = translate_braille(character.join.scan(/.{1,2}/).join("\n"))
             File.write(outgoing_file_path, english_char, mode: 'a')
@@ -37,9 +52,7 @@ class Braille < Dictionary
         end
     end
 
-    def add_braille_character(incoming_file_path)
-        File.readlines(incoming_file_path).each do |line|
-            @grid.push(line.strip.chars.each_slice(2).to_a)
-        end
+    def add_braille_character(incoming_file_path, outgoing_file_path)
+        
     end
 end

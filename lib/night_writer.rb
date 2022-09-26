@@ -31,6 +31,7 @@ class NightWriter
     end
     
     def translate_to_braille
+        File.open(created_filepath, 'w+')
         input_text = File.read(existing_filepath).chars
         input_text.map do |char|
             braille.add_english_character(char.to_sym, created_filepath)
