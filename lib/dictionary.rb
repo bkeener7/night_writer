@@ -38,6 +38,6 @@ class Dictionary
     end
 
     def translate_braille(braille_character)
-        translate.invert[braille_character].to_s
+        translate.invert[braille_character].to_s     
     end
 end

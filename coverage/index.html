@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-25T16:16:24-06:00">2022-09-25T16:16:24-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-09-26T16:34:23-06:00">2022-09-26T16:34:23-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -274,7 +274,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -362,7 +362,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:h, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -373,7 +373,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:e, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:e, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -384,7 +384,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -395,7 +395,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:l, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -406,7 +406,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:o, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:o, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -439,7 +439,7 @@
 
             
 
-            <code class="ruby">        expect(braille.print_braille(&#39;./dummy_files/dummy_write.txt&#39;)).to eq(expected_print)</code>
+            <code class="ruby">        expect(braille.print_braille_translation(&#39;./dummy_files/dummy_write.txt&#39;)).to eq(expected_print)</code>
           </li>
         </div>
       
@@ -494,7 +494,7 @@
 
             
 
-            <code class="ruby">        41.times { braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;) }</code>
+            <code class="ruby">        41.times { braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;) }</code>
           </li>
         </div>
       
@@ -582,7 +582,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -593,7 +593,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -604,7 +604,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -615,7 +615,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -626,7 +626,7 @@
 
             
 
-            <code class="ruby">        braille.add_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_english(:a, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -637,7 +637,7 @@
 
             
 
-            <code class="ruby">        braille.print_braille(&#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.print_braille_translation(&#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -769,7 +769,7 @@
 
             
 
-            <code class="ruby">        braille.print_english(&#39;./dummy_files/dummy_braille_translate.txt&#39;, &#39;./dummy_files/dummy_write.txt&#39;)</code>
+            <code class="ruby">        braille.read_braille(&#39;./dummy_files/dummy_braille_translate.txt&#39;, &#39;./dummy_files/dummy_write.txt&#39;)</code>
           </li>
         </div>
       
@@ -1744,7 +1744,7 @@
 
             
 
-            <code class="ruby">        expected = &quot;0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n\n0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n........................................\n........................................&quot;</code>
+            <code class="ruby">        expected = &quot;0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n................................................................................\n................................................................................\n0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.\n........................................\n........................................&quot;</code>
           </li>
         </div>
       
@@ -1777,7 +1777,7 @@
 
             
 
-            <code class="ruby">        nightwriter.translate_file</code>
+            <code class="ruby">        nightwriter.translate_to_braille</code>
           </li>
         </div>
       
