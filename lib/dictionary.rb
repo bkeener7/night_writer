@@ -38,12 +38,6 @@ class Dictionary
     end
 
     def translate_braille(braille_character)
-        # if translate.invert.key?(braille_character)
-           translate.invert[braille_character].to_s
-        # else
-        #     require 'pry'; binding.pry
-        # end
-        
-
+        translate.invert[braille_character].to_s     
     end
 end
